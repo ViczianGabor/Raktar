@@ -11,10 +11,12 @@ namespace Raktar
         static void Main(string[] args)
         {
 
+            Termek t = new Termek("P01","XL",1500,10);
 
 
+            
 
-
+            Console.ReadKey();
         }
     }
 }
