@@ -10,9 +10,12 @@ namespace Raktar
     class Program
     {
 
+        static List<Termek> termekek = new List<Termek>();
+
         static void beolvas_raktar()
         {
             StreamReader sr = new StreamReader("raktar.csv");
+            
             while (!sr.EndOfStream) 
             {
                 /*
@@ -21,18 +24,26 @@ namespace Raktar
                  
                  */
                 string[] sor = sr.ReadLine().Split(';');
-                Console.WriteLine(sor[0]);
+                termekek.Add(new Termek( sor[0],sor[1],int.Parse(sor[2]),int.Parse(sor[3])));
                 
-
+               
+                
 
             }
 
             sr.Close();
+
+
+            /*  for (int i = 0; i < termekek.Count; i++)
+            {
+                Console.WriteLine(termekek[i].KOD+" "+termekek[i].Nev+" "+termekek[i].AR+" "+termekek[i].DB);
+            }
+            */
         }
         static void Main(string[] args)
         {
             beolvas_raktar();
-            Termek t = new Termek("P01","XL",1500,10);
+            
 
 
             

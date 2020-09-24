@@ -11,7 +11,7 @@ namespace Raktar
         private string kod;
         public string KOD {
 
-
+            
             get { return kod; }
             set { kod = value; }
         }
