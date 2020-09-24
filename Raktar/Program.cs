@@ -40,6 +40,19 @@ namespace Raktar
             }
             */
         }
+
+
+        static void rendeles_metodus()
+        { 
+        
+            
+        
+        
+        
+        
+        
+        
+        }
         static void Main(string[] args)
         {
 
@@ -53,6 +66,7 @@ namespace Raktar
                 Console.WriteLine(t.Nev);
             }
 
+            rendeles_metodus();
 
             Console.ReadKey();
         }
