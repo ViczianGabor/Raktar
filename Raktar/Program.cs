@@ -11,6 +11,7 @@ namespace Raktar
     {
 
         static List<Termek> termekek = new List<Termek>();
+        static List<rendeles> rendelesek = new List<rendeles>();
 
         static void beolvas_raktar()
         {
@@ -42,11 +43,29 @@ namespace Raktar
         }
 
 
+
         static void rendeles_metodus()
-        { 
-        
+        {
+            StreamReader sr = new StreamReader("rendeles.csv");
+
+
+            while (!sr.EndOfStream)
+            {
+                string[] sor = sr.ReadLine().Split(';');
+                if (sor[0] == "M")
+                {
+                    rendelesek.Add(new rendeles(sor[1], sor[2], sor[3]));
+                }
+               
             
-        
+            }
+
+            sr.Close();
+
+            
+            
+                
+            
         
         
         
@@ -60,13 +79,21 @@ namespace Raktar
             
 
             beolvas_raktar();
-
+            /*
             foreach (var t in termekek)
             {
                 Console.WriteLine(t.Nev);
             }
-
+            */
             rendeles_metodus();
+
+            foreach (var t in rendelesek)
+            {
+                Console.Write(t.DATUM + " " + t.RENDELESSZAM + " " + t.EMAIL);
+                Console.WriteLine();
+            }
+
+
 
             Console.ReadKey();
         }
