@@ -66,12 +66,24 @@ namespace Raktar
             
             }
 
+
+            foreach (var m in rendelesek)
+            {
+                m.szamolas(termekek);
+            }
+
+
+
+
+
+
+
+
             sr.Close();
 
-            
-                
-            
-        
+
+
+
         
         
         

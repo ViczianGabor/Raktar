@@ -54,5 +54,62 @@ namespace Raktar
 
 		}
 
+
+
+		private int osszeg;
+
+		public int OSSZEG
+		{
+			get { return osszeg; }
+			set { osszeg = value; }
+		}
+
+		public void szamolas(List<Termek> termekek)
+		{
+			//kód alapján megkeresni a terméket
+			//szum += ár * darab (ahány termék van)
+			int szum = 0;
+
+			for (int i = 0; i < tetelek.Count; i++)
+			{
+				int ar = ara(tetelek[i].KOD,termekek);
+				szum += ar * tetelek[i].DB;
+			}
+
+			this.osszeg = szum;
+
+		}
+
+
+		private int ara(string kod, List<Termek> termekek)
+		{
+			int i = 0;
+			while (termekek[i].KOD !=kod)
+			{
+				i++;
+			}
+
+			return termekek[i].AR;
+
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
+
 }
