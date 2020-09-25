@@ -51,10 +51,16 @@ namespace Raktar
 
             while (!sr.EndOfStream)
             {
-                string[] sor = sr.ReadLine().Split(';');
-                if (sor[0] == "M")
+                string sor = sr.ReadLine();
+                string[] adat = sor.Split(';');
+                if (adat[0] == "M")
                 {
-                    rendelesek.Add(new rendeles(sor[1], sor[2], sor[3]));
+                    rendelesek.Add(new rendeles(adat[1], adat[2], adat[3]));
+                }
+                else
+                {
+                    // rendelesek[rendelesek.Count - 1].termekek.Add(sor); 
+                    rendelesek[rendelesek.Count - 1].tetelhozzaad(adat[2],int.Parse(adat[3]));
                 }
                
             
@@ -62,7 +68,6 @@ namespace Raktar
 
             sr.Close();
 
-            
             
                 
             

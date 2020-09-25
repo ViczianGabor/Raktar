@@ -39,11 +39,20 @@ namespace Raktar
 			this.datum = datum;
 			this.rendelesszam = rendelesszam;
 			this.email = email;
+			tetelek = new List<tetel>();
 
 
 		}
 
+		private List<tetel> tetelek;
 
+
+
+		public void tetelhozzaad(string kod,int db)
+		{
+			tetelek.Add(new tetel(kod, db));
+
+		}
 
 	}
 }

@@ -47,6 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rendeles.cs" />
     <Compile Include="Termek.cs" />
+    <Compile Include="tetelek.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
